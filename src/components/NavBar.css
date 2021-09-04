@@ -1,0 +1,44 @@
+.NavBar{
+    height:20vh;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.NavBar_Img{
+    width: 30%;
+    height: 20vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+img{
+    margin-left: 5%;
+    margin-right: 5%;
+    width: 90%;
+    height: auto;
+}
+
+.NavBar_Elements{
+    margin-right: 20%;
+    margin-left: 20%;
+    width: 30%;
+    height: 20vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+p{
+    font-family: 'Raleway', sans-serif;
+    color: black;
+    cursor: pointer;
+    vertical-align: center;
+}
+
+p:hover{
+    color: #FFDCBA;
+}
+
