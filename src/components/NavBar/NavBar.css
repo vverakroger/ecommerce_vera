@@ -21,14 +21,32 @@ img{
 }
 
 .NavBar_Elements{
-    margin-right: 20%;
-    margin-left: 20%;
-    width: 30%;
+    margin-right: 10%;
+    margin-left: 10%;
+    width: 20%;
     height: 20vh;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
+}
+
+.NavBar_CartWidget{
+    margin-right: 10%;
+    margin-left: 10%;
+    width: 10%;
+    height: 20vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    cursor: pointer;
+}
+
+.NavBar_CartWidget:hover{
+    margin-right: 8%;
+    margin-left: 8%;
+    width: 14%;
 }
 
 p{
