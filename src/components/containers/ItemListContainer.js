@@ -1,7 +1,8 @@
 import React from "react";
 import {useEffect, useState} from 'react';
 import {getFetch} from '../../utils/Mock'
-import ItemList from '../ItemList/ItemList'
+import ItemList from '../itemList/ItemList'
+import ItemCount from '../containers/ItemCount'
 
 function ItemListContainer({greeting,onAdd}){
     const [clothes, setClothes] = useState([])
@@ -25,6 +26,8 @@ function ItemListContainer({greeting,onAdd}){
                 :   
                 <ItemList clothes={clothes}/>             
             }
+            <h2>/////////////</h2> 
+            <ItemCount />
         </div>
     )
 }

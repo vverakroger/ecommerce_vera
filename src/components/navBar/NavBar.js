@@ -1,5 +1,5 @@
 import AppLogo from './Logo.png';
-import CartWidget from '../Cartwidget/CartWidget';
+import CartWidget from '../cartWidget/CartWidget';
 import './NavBar.css';
 
 function NavBar() {
