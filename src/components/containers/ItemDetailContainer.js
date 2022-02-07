@@ -1,11 +1,9 @@
 import React from "react";
 import {useEffect, useState} from 'react';
 import {getFetch} from '../../utils/Mock';
-import ItemList from '../itemList/ItemList';
-import ItemCount from '../itemCount/ItemCount';
-import './ItemListContainer.css';
+import ItemDetail from '../itemDetail/ItemDetail';
 
-function ItemListContainer({greeting,onAdd}){
+function ItemDetailContainer({greeting,onAdd}){
     const [clothes, setClothes] = useState([])
     const [loading, setLoading] = useState(true)
 
@@ -18,21 +16,18 @@ function ItemListContainer({greeting,onAdd}){
     },[])
 
     return(
-        <div className="ListOfItems">
+        <div className="Items">
             <h1>{greeting}</h1>
-            <h2>Clothes</h2> 
+            <h2>Items</h2> 
             {   loading ? 
                     <h3>Loading...</h3> 
                 :   
                 <div className="Items">
-                    <ItemList clothes={clothes}/> 
+                    <ItemDetail clothes={clothes}/> 
                 </div>            
-            }
-            <div className="Count">
-                <ItemCount />
-            </div>   
+            }   
         </div>
     )
 }
 
-export default ItemListContainer
+export default ItemDetailContainer
