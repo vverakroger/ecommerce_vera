@@ -1,10 +1,13 @@
 .ListOfItems{
     width: 100%;
     display: flex;
+    flex-direction: column;
 }
 .Items{
-    width: 90%;
+    width: 100%;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    justify-content: space-around;
+    row-gap: 4vh;
 }
