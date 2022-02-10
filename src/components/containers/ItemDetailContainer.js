@@ -3,7 +3,7 @@ import {useEffect, useState} from 'react';
 import {getFetch} from '../../utils/Mock';
 import ItemDetail from '../itemDetail/ItemDetail';
 
-function ItemDetailContainer({greeting,onAdd}){
+function ItemDetailContainer({number,greeting,onAdd}){
     const [clothes, setClothes] = useState([])
     const [loading, setLoading] = useState(true)
 
@@ -15,6 +15,8 @@ function ItemDetailContainer({greeting,onAdd}){
         })
     },[])
 
+    console.log(clothes[number-1]);
+
     return(
         <div className="Items">
             <h1>{greeting}</h1>
@@ -23,7 +25,7 @@ function ItemDetailContainer({greeting,onAdd}){
                     <h3>Loading...</h3> 
                 :   
                 <div className="Items">
-                    <ItemDetail clothes={clothes}/> 
+                    <ItemDetail clothes={clothes[number-1]}/> 
                 </div>            
             }   
         </div>
