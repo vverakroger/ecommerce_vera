@@ -2,6 +2,7 @@ import React from 'react';
 import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button'
 import './Item.css';
+import { NavLink} from "react-router-dom";
 
 const Item = ({clothes}) => {
     return (
@@ -11,7 +12,7 @@ const Item = ({clothes}) => {
                 <Card.Body className="card-body">
                     <Card.Title>{clothes.name}</Card.Title>
                     <Card.Subtitle>{clothes.desc}</Card.Subtitle>
-                    <Button variant="primary">Details</Button>
+                    <Button variant="primary"><NavLink to={`/details/${clothes.id}`}>Details</NavLink></Button>
                 </Card.Body>
             </Card>
         </div>
