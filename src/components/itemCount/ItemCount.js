@@ -7,7 +7,7 @@ const ItemCount = ({clothes, id, stock, onAdd}) =>{
   
   if (onAdd){
     return <>
-      <Cart clothes={clothes} amount={count} id={id}/> 
+      <Cart clothes={clothes} amount={count}/> 
     </>;
   }
 
