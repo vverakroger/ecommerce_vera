@@ -2,11 +2,12 @@ import React from "react";
 import {useEffect, useState} from 'react';
 import {getFetch} from '../../utils/Mock';
 import ItemDetail from '../itemDetail/ItemDetail';
+import {useParams} from 'react-router-dom'
 
-function ItemDetailContainer({number,greeting,onAdd}){
+function ItemDetailContainer({greeting,onAdd}){
     const [clothes, setClothes] = useState([])
     const [loading, setLoading] = useState(true)
-
+    
     useEffect(()=>{
         getFetch
         .then(res=>{
@@ -15,7 +16,7 @@ function ItemDetailContainer({number,greeting,onAdd}){
         })
     },[])
 
-    console.log(clothes[number-1]);
+    const { id } = useParams()
 
     return(
         <div className="Items">
@@ -25,7 +26,7 @@ function ItemDetailContainer({number,greeting,onAdd}){
                     <h3>Loading...</h3> 
                 :   
                 <div className="Items">
-                    <ItemDetail clothes={clothes[number-1]}/> 
+                    <ItemDetail clothes={clothes[id-1]}/> 
                 </div>            
             }   
         </div>

@@ -2,7 +2,6 @@ import React from "react";
 import {useEffect, useState} from 'react';
 import {getFetch} from '../../utils/Mock';
 import ItemList from '../itemList/ItemList';
-import ItemCount from '../itemCount/ItemCount';
 import './ItemListContainer.css';
 
 function ItemListContainer({greeting,onAdd}){
@@ -27,10 +26,7 @@ function ItemListContainer({greeting,onAdd}){
                 <div className="Items">
                     <ItemList clothes={clothes}/> 
                 </div>            
-            }
-            <div className="Count">
-                <ItemCount />
-            </div>   
+            }   
         </div>
     )
 }

@@ -1,10 +1,16 @@
 import React, { useState } from 'react';
+import Cart from '../cart/Cart';
 
-function ItemCount() {
+const ItemCount = ({clothes, id, stock, onAdd}) =>{
 
   const [count, setCount] = useState(0);
-  const stock = 5;
   
+  if (onAdd){
+    return <>
+      <Cart clothes={clothes} amount={count} id={id}/> 
+    </>;
+  }
+
   return (
     <div>
       Current count: {count}

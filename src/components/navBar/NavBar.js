@@ -16,7 +16,7 @@ function NavBar() {
                     <p><Link to="/shop">Shop</Link></p>
                 </div>
                 <div className="NavBar_CartWidget">
-                    <CartWidget />
+                    <Link to="/cart"><CartWidget /></Link>
                 </div>
             </div>
             <Outlet />
