@@ -1,6 +1,6 @@
 import NavBar from './components/navBar/NavBar';
 import ItemDetailContainer from "./components/containers/ItemDetailContainer";
-import ItemDetailContainer from "./components/containers/cart/Cart";
+import Cart from "./components/cart/Cart";
 import './App.css';
 import Home from "./pages/Home";
 import Gallery from "./pages/Gallery";
@@ -19,7 +19,7 @@ function App() {
             <Route path="gallery" element={<Gallery />} />
             <Route path="shop" element={<Shop />} />
             <Route path={`/details/:id`} element={<ItemDetailContainer/>}/>
-            <Route path="cart" element={<Cart />} />
+            
         </Route>
       </Routes>
     </BrowserRouter>
