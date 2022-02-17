@@ -8,9 +8,9 @@ import { NavLink} from "react-router-dom";
 const ItemDetail = ({clothes}) => {
 
     function onAdd(){
-        return <>
-            <ItemCount clothes={clothes} id={clothes.id} stock={clothes.stock} onAdd={true} /> 
-        </>;
+        return (<>
+            <ItemCount modalOpen={true} /> 
+        </>)
     }
 
     return(
@@ -25,7 +25,7 @@ const ItemDetail = ({clothes}) => {
                         <div className="Count">
                             <ItemCount stock={clothes.stock} onAdd={false}/>
                         </div> 
-                        <Button variant="primary" onClick={onAdd}><NavLink to={`/cart`}>Add to Cart</NavLink></Button>
+                        <Button variant="primary" onClick={onAdd}>Add to Cart</Button>
                     </Card.Body>
                 </Card>
             </div>
