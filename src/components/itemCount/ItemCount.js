@@ -4,16 +4,16 @@ import ItemDetail from '../itemDetail/ItemDetail';
 import ReturnCount from '../itemDetail/ItemDetail';
 import Popup from 'reactjs-popup';
 
-const ItemCount = ({clothes, id, stock, modalOpen}) =>{
+const ItemCount = ({clothes, id, stock, onAdd}) =>{
 
-  console.log('pepe'+modalOpen);
   const [count, setCount] = useState(0);
   const [open, setOpen] = useState(false);
   const closeModal = () => setOpen(false);
-  if (modalOpen){
-    setOpen(o => !o)
+
+  if (onAdd){
+    setOpen(o => !o);
   }
-  
+
   return (
     <div>
       Current count: {count}
