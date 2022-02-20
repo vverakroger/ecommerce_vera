@@ -6,11 +6,7 @@ import ItemCount from '../itemCount/ItemCount';
 import { NavLink} from "react-router-dom";
 
 const ItemDetail = ({clothes}) => {
-    const boole = false;
-    function onAdd(){
-        boole=true;
-    }
-
+    
     return(
         <>
         <div key={clothes.id}>
@@ -21,9 +17,10 @@ const ItemDetail = ({clothes}) => {
                         <Card.Subtitle>{clothes.desc}</Card.Subtitle>
                         <Card.Text>Stock: {clothes.stock}</Card.Text>
                         <div className="Count">
-                            <ItemCount stock={clothes.stock} onAdd={boole}/>
-                        </div> 
-                        <Button variant="primary" onClick={onAdd}>Add to Cart</Button>
+                            <ItemCount stock={clothes.stock} onAdd={false}/>
+                        </div>
+                        <Button>Seguir Comprando</Button>
+                        <Button>Finalizar Compra</Button>
                     </Card.Body>
                 </Card>
             </div>
