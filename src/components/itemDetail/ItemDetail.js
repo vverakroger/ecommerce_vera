@@ -3,10 +3,14 @@ import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button'
 import './ItemDetail.css';
 import ItemCount from '../itemCount/ItemCount';
-import { NavLink} from "react-router-dom";
+import {Link} from "react-router-dom";
 
 const ItemDetail = ({clothes}) => {
     
+    function onAddCart(){
+        
+    }
+
     return(
         <>
         <div key={clothes.id}>
@@ -17,10 +21,10 @@ const ItemDetail = ({clothes}) => {
                         <Card.Subtitle>{clothes.desc}</Card.Subtitle>
                         <Card.Text>Stock: {clothes.stock}</Card.Text>
                         <div className="Count">
-                            <ItemCount stock={clothes.stock} onAdd={false}/>
+                            <ItemCount stock={clothes.stock} onAddCart={onAddCart}/>
                         </div>
-                        <Button>Seguir Comprando</Button>
-                        <Button>Finalizar Compra</Button>
+                        <Link to="/shop"><Button>Seguir Comprando</Button></Link>
+                        <Link to="/cart"><Button>Finalizar Compra</Button></Link>
                     </Card.Body>
                 </Card>
             </div>
