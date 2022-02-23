@@ -3,6 +3,7 @@ import Item from './Item'
 import CardGroup from 'react-bootstrap/CardGroup'
 
 const ItemList = ({clothes}) => {
+    
     return(
         <>
         {clothes.map(clothes =>
