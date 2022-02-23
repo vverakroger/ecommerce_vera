@@ -8,10 +8,10 @@ import CartItem from './CartItem'
 const Cart = () => {
 
     const cartContext = useContext(CartContext);
-    const {cart, amount, removeItem, finalAmount} = cartContext;
+    const {cart, amount, removeItem, finalAmount, clear} = cartContext;
 
-    function removeFromCart(){
-        
+    function removeAllCart(){
+        cartContext.clear();
     }
 
     return(
@@ -19,13 +19,14 @@ const Cart = () => {
         {cart.map(clothes =>
             <div key={clothes.id}>
                 <CardGroup>
-                    <CartItem clothes={clothes} removeFromCart={removeFromCart} />
+                    <CartItem clothes={clothes} />
                 </CardGroup>
             </div>
         )}
-        <Link to="/finish"><Button>Finalizar Compra</Button></Link>
+        <Link to="/finish"><Button>Purchase items</Button></Link>
+        <button onClick={removeAllCart}>Remove all items</button>
         <div>
-            Total: {}
+            Total: {cartContext.finalAmount()}
         </div>
         </>
     );

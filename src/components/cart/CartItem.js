@@ -2,14 +2,13 @@ import {CartContext} from "../../context/CartContext";
 import React, { useContext } from 'react';
 import Card from 'react-bootstrap/Card'
 
-const Item = ({clothes, removeFromCart}) => {
+const Item = ({clothes}) => {
 
     const cartContext = useContext(CartContext);
     const {cart, removeItem} = cartContext;
 
     function removeFromCart(){
         cartContext.removeItem(clothes);
-        console.log("ci"+clothes);
     }
 
     return (
