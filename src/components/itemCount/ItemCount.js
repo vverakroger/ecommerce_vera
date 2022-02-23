@@ -1,22 +1,22 @@
-import React, { useState } from 'react';
-import Cart from '../cart/Cart';
-import ItemDetail from '../itemDetail/ItemDetail';
-import ReturnCount from '../itemDetail/ItemDetail';
+import React, { useState, useContext } from 'react';
 import Popup from 'reactjs-popup';
-import Button from 'react-bootstrap/Button'
+import {CartContext} from "../../context/CartContext";
+import ItemDetail from '../itemDetail/ItemDetail';
 
-const ItemCount = ({ stock, onAddCart}) =>{
-
+const ItemCount = ({ clothes, onAddCart}) =>{
+  
   const [count, setCount] = useState(0);
   const [disapear, setDisapear] = useState(false);
   const [open, setOpen] = useState(false);
+  const stock = clothes.stock;
+
   const closeModal = () => setOpen(false);
-  
+  const data = useContext(CartContext);
+
   function onAddCart(){
     setDisapear(true);
     setOpen(true);
   }
-  
   
   return (
     <div>
@@ -34,7 +34,7 @@ const ItemCount = ({ stock, onAddCart}) =>{
             <a className="close" onClick={closeModal}>
               &times;
             </a>
-            {count} added
+            {count} items have been added to cart
           </div>
         </Popup>
       )}

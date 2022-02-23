@@ -6,11 +6,13 @@ import Home from "./pages/Home";
 import Gallery from "./pages/Gallery";
 import Shop from "./pages/Shop";
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
+import {CartProvider} from "./context/CartContext";
 
 
 function App() {
 
   return (
+    <CartProvider>
     <BrowserRouter>
       <NavBar />
       <Routes>
@@ -19,11 +21,13 @@ function App() {
             <Route path="gallery" element={<Gallery />} />
             <Route path="shop" element={<Shop />} />
             <Route path={`/details/:id`} element={<ItemDetailContainer/>}/>
-            
+            <Route path={`/cart`} element={<Cart/>}/>
         </Route>
       </Routes>
     </BrowserRouter>
+    </CartProvider>
   );
+
 }
 
 export default App;
