@@ -1,4 +1,3 @@
-
 import React, { useState, useContext } from 'react';
 import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button'
@@ -10,7 +9,7 @@ import {Link} from "react-router-dom";
 const ItemDetail = ({clothes}) => {
 
     const [cartAdd, setCartAdd] = useState(false);
-
+    
     const onAddCart = () => {
         setCartAdd(!cartAdd)
     }

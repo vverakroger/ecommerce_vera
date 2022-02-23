@@ -11,11 +11,14 @@ const ItemCount = ({ clothes, onAddCart}) =>{
   const stock = clothes.stock;
 
   const closeModal = () => setOpen(false);
-  const data = useContext(CartContext);
 
+  const cartContext = useContext(CartContext);
+  const {cart, addItem} = cartContext;
+  
   function onAddCart(){
     setDisapear(true);
     setOpen(true);
+    cartContext.addItem(clothes, count)
   }
   
   return (

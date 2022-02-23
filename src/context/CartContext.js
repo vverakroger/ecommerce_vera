@@ -4,12 +4,63 @@ export const CartContext = createContext ();
 
 export const CartProvider = ({children}) => {
 
-    const[clothes, setClothes] = useState( 
-        { id: 1, name: "ItemName", desc: "Description", stock: 5, amount: 3}
-    );
+    const[cart, setCart] = useState([]);
+    const[amount, setAmount] = useState(0);
+
+    const isInCart = (item) =>{
+        var isIn = false;
+        if(cart.some(el => el.id == item.id)){
+            isIn = true;
+        }
+        return isIn;
+    }
+
+    const addItem = (item, quantity) => {
+        if(isInCart(item)){
+            let index = cart.findIndex(el => el.id == item.id);
+            let clothes = cart[index];
+            if ((clothes.quantity + quantity) <= clothes.stock){
+                clothes.quantity = clothes.quantity + quantity;
+            }else{
+                console.log("Insufficient stock");
+            }
+            const newCart = [... cart];
+            newCart.splice(index,1,clothes);
+            setCart([... newCart])
+        }else{
+
+            let clothes = {... item, quantity}
+            setCart([... cart, clothes])
+        }
+    }
+
+    const removeItem = (item) => {
+        if(isInCart(item)){
+            let index = cart.findIndex(el => el.id == item.id);
+            const newCart = [... cart];
+            newCart.splice(index,1);
+            setCart([... newCart])
+        }else{
+            console.log("Item not in cart");
+        }
+    }
+
+    const clear = () => {
+        setCart([]);
+    }
+
+    const finalAmount = () => {
+        var finalAmount = 0;
+        for (let i = 0; i < cart.length; i++) {
+            finalAmount = finalAmount + cart[i].clothes.price;
+        }
+        setAmount(finalAmount);
+    }
+
+    console.log(cart);
 
     return( 
-        <CartContext.Provider value={{clothes}}>
+        <CartContext.Provider value={{cart, setCart, addItem}}>
             {children}
         </CartContext.Provider>
     );
