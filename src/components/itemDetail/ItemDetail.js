@@ -27,8 +27,8 @@ const ItemDetail = ({clothes}) => {
                         <div className="Count">
                             <ItemCount clothes={clothes} onAddCart={onAddCart} />
                         </div>
-                        <Link to="/shop"><Button>Seguir Comprando</Button></Link>
-                        <Link to="/cart"><Button>Finalizar Compra</Button></Link>
+                        <Link to="/shop"><Button>Purchase Items</Button></Link>
+                        <Link to="/cart"><Button>Finish</Button></Link>
                     </Card.Body>
                 </Card>
             </div>

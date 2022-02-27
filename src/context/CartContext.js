@@ -8,7 +8,7 @@ export const CartProvider = ({children}) => {
 
     const isInCart = (item) =>{
         var isIn = false;
-        if(cart.some(el => el.id == item.id)){
+        if(cart.some(el => el.id === item.id)){
             isIn = true;
         }
         return isIn;
@@ -16,29 +16,29 @@ export const CartProvider = ({children}) => {
 
     const addItem = (item, quantity) => {
         if(isInCart(item)){
-            let index = cart.findIndex(el => el.id == item.id);
+            let index = cart.findIndex(el => el.id === item.id);
             let clothes = cart[index];
             if ((clothes.quantity + quantity) <= clothes.stock){
                 clothes.quantity = clothes.quantity + quantity;
             }else{
                 console.log("Insufficient stock");
             }
-            const newCart = [... cart];
+            const newCart = [...cart];
             newCart.splice(index,1,clothes);
-            setCart([... newCart])
+            setCart([...newCart])
         }else{
 
-            let clothes = {... item, quantity}
-            setCart([... cart, clothes])
+            let clothes = {...item, quantity}
+            setCart([...cart, clothes])
         }
     }
 
     const removeItem = (item) => {
         if(isInCart(item)){
-            let index = cart.findIndex(el => el.id == item.id);
-            const newCart = [... cart];
+            let index = cart.findIndex(el => el.id === item.id);
+            const newCart = [...cart];
             newCart.splice(index,1);
-            setCart([... newCart])
+            setCart([...newCart])
         }else{
             console.log("Item not in cart");
         }
@@ -56,10 +56,22 @@ export const CartProvider = ({children}) => {
         return finalAmount;
     }
 
+    const isEmpty = () => {
+        return cart.length === 0;
+    }
+
+    const itemAmount = () => {
+        var itemAmount = 0;
+        for (let i = 0; i < cart.length; i++) {
+            itemAmount = itemAmount + cart[i].quantity;
+        }
+        return itemAmount;
+    }
+
     console.log(cart);
 
     return( 
-        <CartContext.Provider value={{cart, setCart, addItem, removeItem, clear, finalAmount}}>
+        <CartContext.Provider value={{cart, setCart, addItem, removeItem, clear, finalAmount, isEmpty, itemAmount}}>
             {children}
         </CartContext.Provider>
     );

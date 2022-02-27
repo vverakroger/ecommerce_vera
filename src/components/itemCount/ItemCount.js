@@ -20,7 +20,7 @@ const ItemCount = ({ clothes, onAddCart}) =>{
     setOpen(true);
     cartContext.addItem(clothes, count)
   }
-  
+
   return (
     <div>
       {disapear == false ? (
