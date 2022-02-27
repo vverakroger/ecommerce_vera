@@ -4,14 +4,15 @@ import {getFetch} from '../../utils/Mock';
 import ItemList from '../itemList/ItemList';
 import './ItemListContainer.css';
 
-function ItemListContainer({greeting,onAdd}){
-    const [clothes, setClothes] = useState([])
+function ItemListContainer({greeting,productsData}){
+    
     const [loading, setLoading] = useState(true)
-
+    //const [clothes, setClothes] = useState([])
+    
     useEffect(()=>{
         getFetch
         .then(res=>{
-            setClothes(res)
+            //setClothes(res)
             setLoading(false)
         })
     },[])
@@ -24,7 +25,7 @@ function ItemListContainer({greeting,onAdd}){
                     <h3>Loading...</h3> 
                 :   
                 <div className="Items">
-                    <ItemList clothes={clothes}/> 
+                    <ItemList clothes={productsData}/> 
                 </div>            
             }   
         </div>

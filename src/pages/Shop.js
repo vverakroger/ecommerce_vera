@@ -1,8 +1,8 @@
 import ItemListContainer from "../components/containers/ItemListContainer";
 
-function Shop() {
+function Shop({productsData}) {
     return (
-      <ItemListContainer/>
+      <ItemListContainer productsData={productsData}/>
     );
   }
   

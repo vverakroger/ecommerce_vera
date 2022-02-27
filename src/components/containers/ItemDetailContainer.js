@@ -4,14 +4,15 @@ import {getFetch} from '../../utils/Mock';
 import ItemDetail from '../itemDetail/ItemDetail';
 import {useParams} from 'react-router-dom'
 
-function ItemDetailContainer({greeting,onAdd}){
-    const [clothes, setClothes] = useState([])
+function ItemDetailContainer({greeting, productsData}){
+    
     const [loading, setLoading] = useState(true)
+    //const [clothes, setClothes] = useState([])
     
     useEffect(()=>{
         getFetch
         .then(res=>{
-            setClothes(res)
+            //setClothes(res)
             setLoading(false)
         })
     },[])
@@ -26,7 +27,7 @@ function ItemDetailContainer({greeting,onAdd}){
                     <h3>Loading...</h3> 
                 :   
                 <div className="Items">
-                    <ItemDetail clothes={clothes[id-1]}/> 
+                    <ItemDetail clothes={productsData[id-1]}/> 
                 </div>            
             }   
         </div>
