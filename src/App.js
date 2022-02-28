@@ -11,6 +11,7 @@ import {CartProvider} from "./context/CartContext";
 import Home from "./pages/Home";
 import Gallery from "./pages/Gallery";
 import Shop from "./pages/Shop";
+import Purchase from "./pages/Purchase";
 import NavBar from './components/navBar/NavBar';
 //COMPONENTS
 import Cart from "./components/cart/Cart";
@@ -33,7 +34,7 @@ function App() {
       setProductsData(docs);
     };
     getProducts();
-  }, [])
+  }, []);
 
   return (
     <CartProvider>
@@ -44,8 +45,9 @@ function App() {
             <Route index element={<Home />} />
             <Route path="gallery" element={<Gallery />} />
             <Route path="shop" element={<Shop productsData={productsData}/>} />
-            <Route path={`/details/:id`} element={<ItemDetailContainer productsData={productsData}/>}/>
+            <Route path={`/details/:id`} element={<ItemDetailContainer/>}/> 
             <Route path={`/cart`} element={<Cart/>}/>
+            <Route path={`/purchase`} element={<Purchase/>}/>
         </Route>
       </Routes>
     </BrowserRouter>

@@ -1,6 +1,6 @@
 import React, { useState, useContext } from 'react';
-import Card from 'react-bootstrap/Card'
-import Button from 'react-bootstrap/Button'
+import Card from 'react-bootstrap/Card';
+import Button from 'react-bootstrap/Button';
 import './ItemDetail.css';
 import ItemCount from '../itemCount/ItemCount';
 import {Link} from "react-router-dom";
