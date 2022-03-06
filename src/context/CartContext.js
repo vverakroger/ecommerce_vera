@@ -51,7 +51,7 @@ export const CartProvider = ({children}) => {
     const finalAmount = () => {
         var finalAmount = 0;
         for (let i = 0; i < cart.length; i++) {
-            finalAmount = finalAmount + cart[i].price;
+            finalAmount = finalAmount + (cart[i].price * cart[i].quantity);
         }
         return finalAmount;
     }
@@ -68,8 +68,20 @@ export const CartProvider = ({children}) => {
         return itemAmount;
     }
 
+    const returnItems = () =>{
+        var items = [];
+        for (let i = 0; i < cart.length; i++) {
+            const id = cart[i].id;
+            const title = cart[i].name;
+            const price = cart[i].price;
+            const quantity = cart[i].quantity;
+            items[i] = {id, title, price, quantity};
+        }
+        return items;
+    }
+
     return( 
-        <CartContext.Provider value={{cart, setCart, addItem, removeItem, clear, finalAmount, isEmpty, itemAmount}}>
+        <CartContext.Provider value={{cart, setCart, addItem, removeItem, clear, finalAmount, isEmpty, itemAmount, returnItems}}>
             {children}
         </CartContext.Provider>
     );

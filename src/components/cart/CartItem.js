@@ -18,6 +18,7 @@ const Item = ({clothes}) => {
                 <Card.Body className="card-body">
                     <Card.Title>{clothes.name}</Card.Title>
                     <Card.Subtitle>{clothes.desc}</Card.Subtitle>
+                    <Card.Text>Quantity: {clothes.quantity}</Card.Text>
                     <button onClick={removeFromCart}>Remove this item</button>
                 </Card.Body>
             </Card>
