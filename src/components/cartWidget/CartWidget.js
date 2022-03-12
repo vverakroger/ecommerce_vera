@@ -1,6 +1,7 @@
 import CartWidgetAdd from "../../imgs/CartWidget.png"
 import {CartContext} from "../../context/CartContext";
 import React, { useState, useContext, useEffect } from 'react';
+import './CartWidget.css';
 
 const CartWidget = () =>{
 
@@ -10,7 +11,7 @@ const CartWidget = () =>{
     const {cart, isEmpty, itemAmount} = cartContext;
     
     useEffect(() => {
-        setDisapear(cartContext.isEmpty());
+        //setDisapear(cartContext.isEmpty());
         setQuantity(cartContext.itemAmount());
     });
 
@@ -19,7 +20,7 @@ const CartWidget = () =>{
             {disapear === false ? (
                 <div className="CartWidget">
                     <img src={CartWidgetAdd} alt="logo" style={{width:"50%"}}/>
-                    <div className="Quantity">{quantity}</div>
+                    <a className="Quantity">{quantity}</a>
                 </div>
             ) : (
                 <div className="CartWidget"> 

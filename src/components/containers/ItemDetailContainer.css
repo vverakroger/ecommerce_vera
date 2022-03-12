@@ -1,4 +1,4 @@
-.ItemListTitle{
+.ItemDetailTitle{
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -6,11 +6,19 @@
     text-align: center;
 }
 
-.ItemList{
+.ItemDetail{
     width: 100%;
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
     justify-content: space-around;
-    row-gap: 4vh;
+}
+
+.h2{ 
+    text-align: center;
+    font-family: 'Smooch Sans', sans-serif;
+}
+
+.h3{ 
+    text-align: center;
+    font-family: 'Smooch Sans', sans-serif;
 }

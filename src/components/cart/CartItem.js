@@ -1,4 +1,5 @@
 import {CartContext} from "../../context/CartContext";
+import './CartItem.css';
 import React, { useContext } from 'react';
 import Card from 'react-bootstrap/Card'
 
@@ -12,14 +13,14 @@ const Item = ({clothes}) => {
     }
 
     return (
-        <div key={clothes.id}>
+        <div className='CartItem' key={clothes.id}>
             <Card className="card-content" style={{ width: '14rem' }} >
-                <Card.Img variant="top" src={clothes.image} alt=""/>
+                <Card.Img className="card-content-img" variant="top" src={clothes.image} alt=""/>
                 <Card.Body className="card-body">
                     <Card.Title>{clothes.name}</Card.Title>
                     <Card.Subtitle>{clothes.desc}</Card.Subtitle>
-                    <Card.Text>Quantity: {clothes.quantity}</Card.Text>
-                    <button onClick={removeFromCart}>Remove this item</button>
+                    <Card.Subtitle>Quantity: {clothes.quantity}</Card.Subtitle>
+                    <button className='CartBtt' onClick={removeFromCart}>Remove this item</button>
                 </Card.Body>
             </Card>
         </div>

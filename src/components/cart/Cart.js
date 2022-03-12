@@ -1,4 +1,6 @@
 import React, { useContext, useState, useEffect} from 'react';
+//STYLES
+import './Cart.css';
 //COMPONENTS
 import CartItem from './CartItem';
 //BOOTSTRAP
@@ -15,7 +17,9 @@ import {db} from '../../firebase/firebaseConfig';
 
 const initialState = {
     name: '',
+    surname: '',
     email: '',
+    confemail: '',
     phone: '',
 };
 
@@ -84,34 +88,16 @@ const Cart = () => {
     });
       
     return(
-        <div>
-            <div className='Items'>
-                {disapear === false ? (
-                    <div>
-                        {cart.map(clothes =>
-                            <div key={clothes.id}>
-                                <CardGroup>
-                                    <CartItem clothes={clothes} />
-                                </CardGroup>
-                            </div>
-                        )}
-                        <button onClick={removeAllCart}>Remove all items</button>
-                        <div>
-                            Total: ${cartContext.finalAmount()}
-                        </div>
-                    </div>
-                ) : (
-                    <div>
-                        Cart is Empty
-                        <Link to="/shop"><Button>Search for items</Button></Link>
-                    </div>
-                )}
-            </div>
-            <div className='Form'>
-                <Form>
+        <div className='CartContainer'>
+            <div className='CartForm'>
+                <Form className='CartForm2'>
                     <Form.Group className="mb-3" >
                         <Form.Label>Name</Form.Label>
                         <Form.Control name="name" value={buyer.name} onChange={onChange} placeholder="Enter name" />
+                    </Form.Group>
+                    <Form.Group className="mb-3" >
+                        <Form.Label>Surname</Form.Label>
+                        <Form.Control name="surname" value={buyer.surname} onChange={onChange} placeholder="Enter surname" />
                     </Form.Group>
                     <Form.Group className="mb-3" >
                         <Form.Label>Phone</Form.Label>
@@ -121,10 +107,36 @@ const Cart = () => {
                         <Form.Label>Email address</Form.Label>
                         <Form.Control name="email" value={buyer.email} onChange={onChange} type="email" placeholder="Enter email" />
                     </Form.Group>
-                    <Button onClick={sendData}>
+                    <Form.Group className="mb-3" controlId="formBasicEmail">
+                        <Form.Label>Confirm email address</Form.Label>
+                        <Form.Control name="confemail" value={buyer.confemail} onChange={onChange} type="email" placeholder="Enter email" />
+                    </Form.Group>
+                    <Button className='CartBtt' onClick={sendData}>
                         Purchase
                     </Button>
                 </Form>
+            </div>
+            <div className='CartItems'>
+                {disapear === false ? (
+                    <div>
+                        {cart.map(clothes =>
+                            <div key={clothes.id}>
+                                <CardGroup>
+                                    <CartItem clothes={clothes} />
+                                </CardGroup>
+                            </div>
+                        )}
+                        <button className='CartBtt' onClick={removeAllCart}>Remove all items</button>
+                        <div>
+                            Total: ${cartContext.finalAmount()}
+                        </div>
+                    </div>
+                ) : (
+                    <div>
+                        Cart is Empty
+                        <Link to="/shop"><Button className='CartBtt'>Search for items</Button></Link>
+                    </div>
+                )}
             </div>
         </div>
         

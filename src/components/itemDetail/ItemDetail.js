@@ -22,13 +22,13 @@ const ItemDetail = ({clothes}) => {
                     <Card.Body className="card-body">
                         <Card.Title>{clothes.name}</Card.Title>
                         <Card.Subtitle>{clothes.desc}</Card.Subtitle>
-                        <Card.Text>Price: ${clothes.price}</Card.Text>
-                        <Card.Text>Stock: {clothes.stock}</Card.Text>
+                        <Card.Subtitle>Price: ${clothes.price}</Card.Subtitle>
+                        <Card.Subtitle>Stock: {clothes.stock}</Card.Subtitle>
                         <div className="Count">
                             <ItemCount clothes={clothes} onAddCart={onAddCart} />
                         </div>
-                        <Link to="/shop"><Button>Purchase Items</Button></Link>
-                        <Link to="/cart"><Button>Finish</Button></Link>
+                        <Link to="/shop"><Button className="card-btt">Purchase Items</Button></Link>
+                        <Link to="/cart"><Button className="card-btt">Finish</Button></Link>
                     </Card.Body>
                 </Card>
             </div>

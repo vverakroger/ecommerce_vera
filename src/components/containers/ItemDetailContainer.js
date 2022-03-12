@@ -2,6 +2,7 @@ import React from "react";
 import {useEffect, useState} from 'react';
 import ItemDetail from '../itemDetail/ItemDetail';
 import {useParams} from 'react-router-dom';
+import './ItemDetailContainer.css';
 //FIREBASE
 import { collection, query, where, getDocs, FieldPath, documentId } from "firebase/firestore";
 import {db} from '../../firebase/firebaseConfig';
@@ -33,13 +34,13 @@ const ItemDetailContainer = ({greeting}) => {
 	}, []);
 
     return(
-        <div className="Items">
+        <div className="ItemDetailTitle">
             <h1>{greeting}</h1>
             <h2>Items</h2> 
             {   loading ? 
                     <h3>Loading...</h3> 
                 :   
-                <div className="Items">
+                <div className="ItemDetail">
                     <ItemDetail clothes={productData[0]}/> 
                 </div>            
             }   

@@ -1,0 +1,50 @@
+.btt{ 
+    background-color: #FFDCBA;
+    font-family: 'Smooch Sans', sans-serif;
+    font-size: large;
+    width: 100%;
+    height: 10vh;
+    border: 0.1px solid black;
+    color: black;
+}
+
+.btt:hover{ 
+    background-color: white;
+    cursor: pointer;
+    font-family: 'Smooch Sans', sans-serif;
+    width: 100%;
+    height: 10vh;
+}
+
+.sign{ 
+    background-color: #FFDCBA;
+    font-family: 'Smooch Sans', sans-serif;
+    font-size: large;
+    width: 50%;
+    height: 5vh;
+    border: 0.1px solid black;
+    color: black;
+}
+
+.sign:hover{ 
+    background-color: white;
+    cursor: pointer;
+    font-family: 'Smooch Sans', sans-serif;
+    width: 50%;
+    height: 5vh;
+    font-size:large;
+}
+
+.modal{
+    width: 100%;
+    height: 10vh;
+    border: 0.1px solid black;
+    background-color: #FFDCBA;
+    font-family: 'Smooch Sans', sans-serif;
+    font-size:large;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 00.2rem;
+}

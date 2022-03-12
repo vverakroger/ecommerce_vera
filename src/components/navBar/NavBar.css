@@ -29,6 +29,14 @@ img{
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
+    text-decoration: none;
+}
+
+.a:-webkit-any-link{
+    text-decoration: none;
+}
+.p{
+    font-family: 'Smooch Sans', sans-serif;
 }
 
 .NavBar_CartWidget{
@@ -60,3 +68,19 @@ p:hover{
     color: #FFDCBA;
 }
 
+.SearchItems{
+    text-decoration:underline;
+    text-decoration: white;
+    color: black;
+}
+
+.SearchItems{
+    text-decoration:underline;
+    text-decoration: white;
+    color: black;
+}
+
+.SearchItems:hover{
+    text-decoration:underline;
+    text-decoration: black;
+}

@@ -1,6 +1,7 @@
 import React, { useState, useContext } from 'react';
 import Popup from 'reactjs-popup';
 import {CartContext} from "../../context/CartContext";
+import './ItemCount.css';
 import ItemDetail from '../itemDetail/ItemDetail';
 
 const ItemCount = ({ clothes, onAddCart}) =>{
@@ -27,9 +28,10 @@ const ItemCount = ({ clothes, onAddCart}) =>{
         <div>
           Current count: {count}
           <hr />
-          <button sign="+" onClick={() => count < stock ?  setCount(count + 1) : setCount(count)}>+</button>
-          <button sign="-" onClick={() => count > 0 ?  setCount(count - 1) : setCount(count)}>-</button>
-          <button onClick={onAddCart}>Add to cart</button>
+          <button className="sign" sign="+" onClick={() => count < stock ?  setCount(count + 1) : setCount(count)}>+</button>
+          <button className="sign" sign="-" onClick={() => count > 0 ?  setCount(count - 1) : setCount(count)}>-</button>
+          <hr />
+          <button className="btt" onClick={onAddCart}>Add to cart</button>
         </div>
        ) : (
         <Popup open={open} closeOnDocumentClick onClose={closeModal}>

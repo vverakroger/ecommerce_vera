@@ -1,33 +1,27 @@
 import React from "react";
-import {useEffect, useState} from 'react';
-import {getFetch} from '../../utils/Mock';
+import {useState} from 'react';
 import ItemList from '../itemList/ItemList';
 import './ItemListContainer.css';
 
-function ItemListContainer({greeting,productsData}){
+function ItemListContainer({greeting, productsData}){
     
     const [loading, setLoading] = useState(true)
-    //const [clothes, setClothes] = useState([])
     
-    useEffect(()=>{
-        getFetch
-        .then(res=>{
-            //setClothes(res)
-            setLoading(false)
-        })
-    },[])
+    setTimeout(() => {
+        setLoading(false);
+    }, 1000);
 
     return(
-        <div className="ListOfItems">
+        <div className="ItemListTitle">
             <h1>{greeting}</h1>
-            <h2>Clothes</h2> 
+            <h2>Clothes</h2>
             {   loading ? 
                     <h3>Loading...</h3> 
                 :   
-                <div className="Items">
-                    <ItemList clothes={productsData}/> 
-                </div>            
-            }   
+                <div className="ItemList">
+                        <ItemList clothes={productsData}/> 
+                </div>
+            }               
         </div>
     )
 }

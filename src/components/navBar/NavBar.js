@@ -11,9 +11,9 @@ function NavBar() {
                     <img src={AppLogo} alt="logo" />
                 </div>
                 <div className="NavBar_Elements">
-                    <p><Link to="/">Home</Link></p>
-                    <p><Link to="/gallery">Gallery</Link></p>
-                    <p><Link to="/shop">Shop</Link></p>
+                    <Link to="/"><a className="SearchItems">Home</a></Link>
+                    <Link to="/gallery"><a className="SearchItems">Gallery</a></Link>
+                    <Link to="/shop"><a className="SearchItems">Shop</a></Link>
                 </div>
                 <div className="NavBar_CartWidget">
                     <Link to="/cart"><CartWidget /></Link>
