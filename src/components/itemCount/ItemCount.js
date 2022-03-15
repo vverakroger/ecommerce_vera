@@ -2,7 +2,6 @@ import React, { useState, useContext } from 'react';
 import Popup from 'reactjs-popup';
 import {CartContext} from "../../context/CartContext";
 import './ItemCount.css';
-import ItemDetail from '../itemDetail/ItemDetail';
 
 const ItemCount = ({ clothes, onAddCart}) =>{
   
@@ -14,7 +13,7 @@ const ItemCount = ({ clothes, onAddCart}) =>{
   const closeModal = () => setOpen(false);
 
   const cartContext = useContext(CartContext);
-  const {cart, addItem} = cartContext;
+  //const {cart, addItem} = cartContext;
   
   function onAddCart(){
     setDisapear(true);
